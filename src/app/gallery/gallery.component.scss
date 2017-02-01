@@ -1,0 +1,16 @@
+.gallery-wrapper {
+  .selected-image {
+    float: left;
+    width: 580px;
+    margin: 10px;
+  }
+  .gallery {
+    .thumbnail {
+      float: left;
+      width: 180px;
+      height: 155px;
+      margin: 10px;
+      border: 1px solid black;
+    }
+  }
+}

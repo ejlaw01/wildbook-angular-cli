@@ -1,0 +1,42 @@
+.menu-tab {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  height: 6px;
+  width: 6px;
+  border: 3px solid transparent;
+  border-top: 3px solid black;
+}
+
+.nav-back {
+  position: relative;
+  height: 60px;
+  background-color: #FFFFFF;
+  opacity: .8;
+  width: 100%;
+  .nav {
+    width: 1000px;
+    margin: 0 auto;
+    ul {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      li {
+        position: relative;
+        float: left;
+        height: 100%;
+        padding: 1.2em;
+        padding-left: 1em;
+        padding-right: 1.4em;
+        &:hover {
+          background-color: #EBEBEB;
+        }
+        img {
+          position: relative;
+          bottom: 3px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}

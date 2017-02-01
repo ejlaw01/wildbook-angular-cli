@@ -1,0 +1,17 @@
+.header-back {
+  position: relative;
+  height: 110px;
+  width: 100%;
+  background-color: #333333;
+}
+
+.header {
+  position: relative;
+  height: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  #logo {
+    height: 70px;
+    margin: 20px;
+  }
+}
