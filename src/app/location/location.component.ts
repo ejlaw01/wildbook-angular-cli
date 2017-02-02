@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationComponent implements OnInit {
 
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number = 37.3;
+  lng: number = -6.4;
+  zoom: number = 6;
 
   constructor() { }
 
