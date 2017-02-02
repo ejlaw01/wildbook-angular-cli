@@ -1,0 +1,226 @@
+{
+"sex": "unknown",
+"numSpotsRight": 0,
+"state": "",
+"zebraClass": "",
+"gpsLongitude": "-1.0",
+"spotImageFileName": "",
+"dateInMilliseconds": 1466399220000,
+"catalogNumber": "49413784-83ca-4210-964b-ced9eed6f895",
+"gpsLatitude": "-1.0",
+"rightSpotImageFileName": "",
+"mmaCompatible": false,
+"year": 2016,
+"specificEpithet": "quagga",
+"distinguishingScar": "None",
+"minutes": "07",
+"individualID": "IBEIS_UNKNOWN_0858",
+"hasAnnotations": true,
+"class": "org.ecocean.Encounter",
+"size_guess": "none provided",
+"locationID": "Lewa",
+"genus": "Equus",
+"hour": 8,
+"occurrenceID": "179c0384-d35a-41a1-a467-0ddcb2aec9c8",
+"tissueSamples": [],
+"modified": "2016-09-08 23:29:03",
+"occurrenceRemarks": "",
+"measurements": [],
+"decimalLatitude": -1,
+"metalTags": [],
+"numSpotsLeft": 0,
+"_imagesNote": ".images have been deprecated!  long live MediaAssets!  (see: .annotations)",
+"decimalLongitude": -1,
+"month": 6,
+"images": [],
+"annotations": [
+{
+"id": "2faf8ce5-d91f-448d-9995-fe85c24306db",
+"features": [
+{
+"id": "8c8e47f0-ccc7-441c-9813-bfcc0bf66cd1",
+"mediaAsset": {
+"id": 17565,
+"userDateTime": "2016-06-20T20:07:33.000-04:00",
+"store": {
+"type": "LOCAL"
+},
+"dateTime": "2016-06-20T20:07:33.000-04:00",
+"labels": [
+"_original"
+],
+"features": [
+{
+"id": "8c8e47f0-ccc7-441c-9813-bfcc0bf66cd1",
+"parameters": {
+"height": 531,
+"width": 794,
+"y": 730,
+"x": 992
+},
+"type": "org.ecocean.boundingBox"
+},
+{
+"id": "27edd9b2-b140-421d-a9f4-eda8f119399f",
+"parameters": {
+"height": 488,
+"width": 674,
+"y": 761,
+"x": 1874
+},
+"type": "org.ecocean.boundingBox"
+},
+{
+"id": "e53c8b41-a4f0-4f00-9362-a7cf41ffa122",
+"parameters": {
+"height": 481,
+"width": 572,
+"y": 702,
+"x": 2440
+},
+"type": "org.ecocean.boundingBox"
+},
+{
+"id": "bda4711a-18bd-4b0c-a7db-fd01ccd46ecb",
+"parameters": {
+"height": 501,
+"width": 531,
+"y": 703,
+"x": 3708
+},
+"type": "org.ecocean.boundingBox"
+},
+{
+"id": "69c84647-9e77-430b-9229-28a446d74b0c",
+"parameters": {
+"height": 807,
+"width": 928,
+"y": 1141,
+"x": 191
+},
+"type": "org.ecocean.boundingBox"
+},
+{
+"id": "b99e34a7-e82c-4150-adf6-eed74fa905de",
+"parameters": {
+"height": 818,
+"width": 1078,
+"y": 1041,
+"x": 982
+},
+"type": "org.ecocean.boundingBox"
+},
+{
+"id": "f880d27b-4211-4aba-b529-c542de9335c6",
+"parameters": {
+"height": 846,
+"width": 1139,
+"y": 980,
+"x": 1763
+},
+"type": "org.ecocean.boundingBox"
+}
+],
+"userLongitude": -1,
+"url": "http://lewa.wildbook.org:8080/lewa3_data_dir/e/9/e97462ab-664a-404c-a922-c0bc1c274778/75156192-10fe-38d3-f84b-d97272fab5d0.jpg",
+"userLatitude": -1,
+"metadata": {
+"height": 2848,
+"width": 4272,
+"contentType": "image/jpeg"
+}
+},
+"parameters": {
+"height": 531,
+"width": 794,
+"y": 730,
+"x": 992
+},
+"type": "org.ecocean.boundingBox"
+}
+],
+"isExemplar": true
+},
+{
+"id": "43b79371-ef30-46d2-b04b-8c0e76075af9",
+"features": [
+{
+"id": "2204e315-5c61-467f-b4a0-4df70ac2a6be",
+"mediaAsset": {
+"id": 17569,
+"userDateTime": "2016-06-20T20:07:35.000-04:00",
+"store": {
+"type": "LOCAL"
+},
+"dateTime": "2016-06-20T20:07:35.000-04:00",
+"labels": [
+"_original"
+],
+"features": [
+{
+"id": "2204e315-5c61-467f-b4a0-4df70ac2a6be",
+"parameters": {
+"height": 540,
+"width": 652,
+"y": 677,
+"x": 3233
+},
+"type": "org.ecocean.boundingBox"
+},
+{
+"id": "85a8bf9a-7790-4b52-9889-d2924ab740bf",
+"parameters": {
+"height": 930,
+"width": 1178,
+"y": 929,
+"x": 1413
+},
+"type": "org.ecocean.boundingBox"
+},
+{
+"id": "900ed38f-5000-4eac-801c-9fcd69af98b1",
+"parameters": {
+"height": 782,
+"width": 976,
+"y": 1094,
+"x": 2410
+},
+"type": "org.ecocean.boundingBox"
+},
+{
+"id": "b8f4dc7d-a460-440d-9828-71a5d807cc88",
+"parameters": {
+"height": 963,
+"width": 683,
+"y": 899,
+"x": 3583
+},
+"type": "org.ecocean.boundingBox"
+}
+],
+"userLongitude": -1,
+"url": "http://lewa.wildbook.org:8080/lewa3_data_dir/7/1/714d8f5d-453f-49ba-96f5-a610814e545a/22a3be4e-bd4c-a407-beb3-ba21f58e855d.jpg",
+"userLatitude": -1,
+"metadata": {
+"height": 2848,
+"width": 4272,
+"contentType": "image/jpeg"
+}
+},
+"parameters": {
+"height": 540,
+"width": 652,
+"y": 677,
+"x": 3233
+},
+"type": "org.ecocean.boundingBox"
+}
+],
+"isExemplar": true
+}
+],
+"day": 20,
+"dwcDateAdded": "2016-09-08 23:29:03",
+"okExposeViaTapirLink": false,
+"identificationRemarks": "IBEIS IA"
+}
