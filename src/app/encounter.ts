@@ -1,46 +1,47 @@
 export class Encounter {
-  id: number;
-  name: string;
+  constructor(public name: string, public imageURL: string){};
 }
 
 // export class Encounter {
-//   sex: string;
-//   numSpotsRight: number;
-//   state: string;
-//   zebraClass: string;
-//   gpsLongitude: string;
-//   spotImageFileName: string;
-//   dateInMilliseconds: number;
-//   catalogNumber: string;
-//   gpsLatitude: string;
-//   rightSpotImageFileName: string;
-//   mmaCompatible: boolean;
-//   year: number;
-//   specificEpithet: string;
-//   distinguishingScar: string;
-//   minutes: string;
-//   individualID: string;
-//   hasAnnotations: boolean;
-//   class: string;
-//   size_guess: string;
-//   locationID: string;
-//   genus: string;
-//   hour: number;
-//   occurenceID: string;
-//   tissueSamples: sample[];
-//   modified: string;
-//   occurrenceRemarks: string;
-//   measurements: measurement[];
-//   decimalLatitude: number;
-//   metalTags: tag[];
-//   numSpotsLeft: number;
-//   _imagesNote: string;
-//   decimalLongitude: number;
-//   month: number;
-//   images: image[];
-//   annotations: annotation[];
-//   day: number;
-//   dwcDateAdded: string;
-//   okExposeViaTapirLink: boolean;
-//   identificationRemarks: string;
+//   constructor(
+//     public sex: string,
+//     public numSpotsRight: number,
+//     public state: string,
+//     public zebraClass: string,
+//     public gpsLongitude: string,
+//     public spotImageFileName: string,
+//     public dateInMilliseconds: number,
+//     public catalogNumber: string,
+//     public gpsLatitude: string,
+//     public rightSpotImageFileName: string,
+//     public mmaCompatible: boolean,
+//     public year: number,
+//     public specificEpithet: string,
+//     public distinguishingScar: string,
+//     public minutes: string,
+//     public individualID: string,
+//     public hasAnnotations: boolean,
+//     public class: string,
+//     public size_guess: string,
+//     public locationID: string,
+//     public genus: string,
+//     public hour: number,
+//     public occurenceID: string,
+//     public tissueSamples: sample[],
+//     public modified: string,
+//     public occurrenceRemarks: string,
+//     public measurements: measurement[],
+//     public decimalLatitude: number,
+//     public metalTags: tag[],
+//     public numSpotsLeft: number,
+//     public _imagesNote: string,
+//     public decimalLongitude: number,
+//     public month: number,
+//     public images: image[],
+//     public annotations: annotation[],
+//     public day: number,
+//     public dwcDateAdded: string,
+//     public okExposeViaTapirLink: boolean,
+//     public identificationRemarks: string
+//   ){}
 // }

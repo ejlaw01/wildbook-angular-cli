@@ -9,7 +9,6 @@ import { EncounterService } from './encounter.service';
   providers: [EncounterService]
 })
 
-
 export class AppComponent implements OnInit {
 
   encounters: Encounter[];
@@ -23,6 +22,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.getEncounter();
   }
+
 
 
 }
