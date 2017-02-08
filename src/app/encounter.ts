@@ -1,6 +1,26 @@
 export class Encounter {
-  constructor(public name: string, public imageURL: string){};
+  constructor(
+    public name: string,
+    public MediaAssets: MediaAsset[]
+  ){}
 }
+
+export class MediaAsset {
+  constructor(
+    public imageURL: string,
+    public annotation: AnnotationParam
+  ){}
+}
+
+export class AnnotationParam {
+  constructor(
+    public height: number,
+    public width: number,
+    public x: number,
+    public y: number
+  ){}
+}
+
 
 // export class Encounter {
 //   constructor(
