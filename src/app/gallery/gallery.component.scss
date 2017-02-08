@@ -1,19 +1,26 @@
 .selected-image {
-    display: block;
-    margin: auto;
-    width: 100%;
+  display: block;
+  margin: auto;
+  width: 90%;
+}
+
+.gallery {
+  display: block;
+  margin: auto;
 }
 
 .thumbnail {
-      float: left;
-      width: 180px;
-      height: 155px;
-      margin: 10px;
-      border: 1px solid black;
+  float: left;
+  width: 40%;
+  height: 200px;
+  margin: 5%;
+  border: 1px solid black;
 }
 
 .toolbar {
-  height: 1em;
-  width: inherit;
+  height: 2.5em;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
   background-color: transparentize(#333, 0.2);
 }
