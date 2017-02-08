@@ -1,16 +1,19 @@
-.gallery-wrapper {
-  .selected-image {
-    float: left;
-    width: 580px;
-    margin: 10px;
-  }
-  .gallery {
-    .thumbnail {
+.selected-image {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.thumbnail {
       float: left;
       width: 180px;
       height: 155px;
       margin: 10px;
       border: 1px solid black;
-    }
-  }
+}
+
+.toolbar {
+  height: 1em;
+  width: inherit;
+  background-color: transparentize(#333, 0.2);
 }
