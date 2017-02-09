@@ -1,26 +1,32 @@
 .selected-image {
-  display: block;
-  margin: auto;
-  width: 90%;
+  img {
+    display: block;
+    margin: auto;
+    width: 30vw;
+    height: auto;
+  }
+  .toolbar {
+    height: 2.5em;
+    width: 30vw;
+    display: block;
+    margin: 0 auto;
+    background-color: transparentize(#333, 0.2);
+  }
 }
 
 .gallery {
   display: block;
   margin: auto;
-}
-
-.thumbnail {
-  float: left;
-  width: 40%;
-  height: 200px;
-  margin: 5%;
-  border: 1px solid black;
-}
-
-.toolbar {
-  height: 2.5em;
-  width: 90%;
-  display: block;
-  margin: 0 auto;
-  background-color: transparentize(#333, 0.2);
+  height: 135px;
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  overflow: scroll;
+  .thumbnail {
+    width: 100px;
+    height: 100px;
+    margin: 1em;
+    border: 1px solid black;
+  }
 }
