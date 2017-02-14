@@ -1,5 +1,5 @@
-.selected-image {
-  img {
+.selected {
+  #selected-image {
     display: block;
     margin: auto;
     width: 30vw;
@@ -9,8 +9,12 @@
     height: 2.5em;
     width: 30vw;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 1em;
     background-color: #232323;
+    text-align: right;
+    img {
+      margin: 4px;
+    }
   }
 }
 
