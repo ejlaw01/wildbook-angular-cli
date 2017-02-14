@@ -3,6 +3,7 @@
   height: 110px;
   width: 100%;
   background-color: #232323;
+  color: #fff;
 }
 
 .header {
@@ -12,6 +13,28 @@
   margin: 0 auto;
   #logo {
     width: 100px;
-    margin: 1em;
+    position: relative;
+    right: 2em;
+    margin-top: 0.6em;
+  }
+}
+
+.search {
+  width: 10em;
+  position: relative;
+  top: -2em;
+  left: 53em;
+  display: flex;
+  flex-direction: row;
+  input {
+    background-color: #fff;
+    border: none;
+    border-radius: 0.25em;
+    height: 2em;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+    margin-left: 0.5em;
   }
 }
