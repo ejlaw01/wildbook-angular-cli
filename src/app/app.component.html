@@ -7,9 +7,15 @@
 
   <ul>
     <li *ngFor="let encounter of encounters">
-      <h5>individual: {{encounter.name}} <br><img src={{encounter.imageURL}} alt=""></h5>
+      <h5>individual: {{encounter.name}}
+      <!-- <ul>
+        <li *ngFor="let mediaAsset of mediaAssets; let i=index"><img src={{mediaAssets.imageURL}} alt=""></li>
+      </ul> -->
+      </h5>
+      <br>
+      
       <div class="annotation">
-        
+
       </div>
     </li>
   </ul>

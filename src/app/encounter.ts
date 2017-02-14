@@ -1,11 +1,11 @@
 export class Encounter {
   constructor(
     public name: string,
-    public MediaAssets: MediaAsset[]
+    public mediaAssets: MiniMediaAsset[]
   ){}
 }
 
-export class MediaAsset {
+export class MiniMediaAsset {
   constructor(
     public imageURL: string,
     public annotation: AnnotationParam
@@ -22,7 +22,7 @@ export class AnnotationParam {
 }
 
 
-// export class Encounter {
+// export class JsonEncounter {
 //   constructor(
 //     public sex: string,
 //     public numSpotsRight: number,
@@ -41,27 +41,83 @@ export class AnnotationParam {
 //     public minutes: string,
 //     public individualID: string,
 //     public hasAnnotations: boolean,
-//     public class: string,
+//     public taxonomicClass: string,
 //     public size_guess: string,
 //     public locationID: string,
 //     public genus: string,
 //     public hour: number,
 //     public occurenceID: string,
-//     public tissueSamples: sample[],
+//     public tissueSamples: string[],
 //     public modified: string,
 //     public occurrenceRemarks: string,
-//     public measurements: measurement[],
+//     public measurements: number[],
 //     public decimalLatitude: number,
-//     public metalTags: tag[],
+//     public metalTags: number[],
 //     public numSpotsLeft: number,
 //     public _imagesNote: string,
 //     public decimalLongitude: number,
 //     public month: number,
-//     public images: image[],
-//     public annotations: annotation[],
+//     public images: string[],
+//     public annotations: Annotation[],
 //     public day: number,
 //     public dwcDateAdded: string,
 //     public okExposeViaTapirLink: boolean,
 //     public identificationRemarks: string
 //   ){}
 // }
+
+export class Annotation {
+  constructor(
+    public id: string,
+    public features: Feature[],
+    public isExemplar: boolean
+  ){}
+}
+
+export class Feature {
+  constructor(
+    public id: string,
+    public mediaAsset: MediaAsset,
+    public parameters: AnnotationParam,
+    public type: string
+  ){}
+}
+
+export class MediaAsset {
+  constructor(
+    public id: number,
+    public userDateTime: string,
+    public store: Store,
+    public dateTime: string,
+    public imageURL: string,
+    public labels: string[],
+    public features: MediaAssetFeature[],
+    public userLongitude: number,
+    public url: string,
+    public userLatitude: number,
+    public metadata: Metadata,
+    public annotation: AnnotationParam
+  ){}
+}
+
+export class MediaAssetFeature {
+  constructor(
+    public id: string,
+    public parameters: AnnotationParam,
+    public type: string
+  ){}
+}
+
+export class Store {
+  constructor(
+    public type: string
+  ){}
+}
+
+export class Metadata {
+  constructor(
+    public height: number,
+    public width: number,
+    public contentType: string
+  ){}
+}

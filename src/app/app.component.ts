@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Encounter } from './encounter';
+import { Encounter, MediaAsset, AnnotationParam, MiniMediaAsset } from './encounter';
 import { EncounterService } from './encounter.service';
+// import { Headers, Http, Response } from '@angular/http';
+
 
 @Component({
   selector: 'app-root',
@@ -11,12 +13,12 @@ import { EncounterService } from './encounter.service';
 
 export class AppComponent implements OnInit {
 
-  encounters: Encounter[];
+  encounter: Encounter;
 
   constructor(private encounterService: EncounterService) { }
 
   getEncounter(): void {
-    this.encounterService.getEncounter().then(encounters => this.encounters = encounters);
+    this.encounterService.getEncounter().then(encounter => this.encounter = encounter);
   }
 
   ngOnInit(): void {

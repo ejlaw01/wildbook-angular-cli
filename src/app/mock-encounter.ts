@@ -1,5 +1,3 @@
-import { Encounter } from './encounter';
-
-export const ENCOUNTERS: Encounter[] = [
-
-];
+// import { Encounter } from './encounter';
+//
+// export const ENCOUNTER: Encounter = undefined;
