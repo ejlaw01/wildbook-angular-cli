@@ -1,6 +1,6 @@
 export class Encounter {
   constructor(
-    public name: string,
+    public individualID: string,
     public mediaAssets: MiniMediaAsset[]
   ){}
 }

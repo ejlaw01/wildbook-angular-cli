@@ -13,12 +13,14 @@ import { EncounterService } from './encounter.service';
 
 export class AppComponent implements OnInit {
 
-  encounter: Encounter;
+  encounter: Encounter[];
 
   constructor(private encounterService: EncounterService) { }
 
   getEncounter(): void {
-    this.encounterService.getEncounter().then(encounter => this.encounter = encounter);
+	this.encounterService.getEncounter().subscribe(
+		encounter => this.encounter = encounter
+	);
   }
 
   ngOnInit(): void {

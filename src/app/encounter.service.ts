@@ -3,7 +3,9 @@ import { Headers, Http, Response } from '@angular/http';
 
 import { Encounter, AnnotationParam, MiniMediaAsset, MediaAsset, Annotation, Feature, MediaAssetFeature, Store, Metadata } from './encounter';
 
-// import {Observable} from 'rxjs/Rx';
+ import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 // import { ENCOUNTER } from './mock-encounter';
 // import 'rxjs/add/operator/toPromise';
 
@@ -11,10 +13,14 @@ import { Encounter, AnnotationParam, MiniMediaAsset, MediaAsset, Annotation, Fea
 @Injectable()
 export class EncounterService {
 
-  getEncounter(): Promise<Encounter> {
+  getEncounter(): Observable<Encounter[]> {
     let link: string = 'http://lev.cs.rpi.edu:8080/lewa3/api/org.ecocean.Encounter/';
     let encounterID: string = '49413784-83ca-4210-964b-ced9eed6f895';
     let apiLink: string = link + encounterID;
+
+return this.http.get(apiLink).map(this.extractData).catch(this.handleError);
+
+/*
 
     var encounterObject;
     var thisEncounter: Encounter;
@@ -24,7 +30,7 @@ export class EncounterService {
     var request = new Promise(function(){
       self.http.get(apiLink).subscribe((res: Response) => {
 
-        debugger;
+        //debugger;
         var encounterObject = res.json();
         console.log(encounterObject);
 
@@ -41,17 +47,29 @@ export class EncounterService {
         }
 
         thisEncounter = new Encounter(name, mediaAssets);
-        console.log(thisEncounter);
+        console.log('thisEncounter -> %o', thisEncounter);
         return thisEncounter;
       });
     });
 
     debugger;
     return Promise.resolve(request);
+*/
+
   }
 
+private extractData(res: Response) {
+  let body = res.json();
+console.info('extractData() body --> %o', body);
+  return [body || { }];
+}
   constructor(private http: Http){  }
 
+
+ private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
 }
 
     // var request = new Promise(function(){
@@ -99,3 +117,4 @@ export class EncounterService {
   //
   //   return Promise.resolve(thisEncounter);
   // }
+
