@@ -23,48 +23,52 @@ export class AnnotationParam {
 
 
 // export class JsonEncounter {
-//   constructor(
-//     public sex: string,
-//     public numSpotsRight: number,
-//     public state: string,
-//     public zebraClass: string,
-//     public gpsLongitude: string,
-//     public spotImageFileName: string,
-//     public dateInMilliseconds: number,
-//     public catalogNumber: string,
-//     public gpsLatitude: string,
-//     public rightSpotImageFileName: string,
-//     public mmaCompatible: boolean,
-//     public year: number,
-//     public specificEpithet: string,
-//     public distinguishingScar: string,
-//     public minutes: string,
-//     public individualID: string,
-//     public hasAnnotations: boolean,
-//     public taxonomicClass: string,
-//     public size_guess: string,
-//     public locationID: string,
-//     public genus: string,
-//     public hour: number,
-//     public occurenceID: string,
-//     public tissueSamples: string[],
-//     public modified: string,
-//     public occurrenceRemarks: string,
-//     public measurements: number[],
-//     public decimalLatitude: number,
-//     public metalTags: number[],
-//     public numSpotsLeft: number,
-//     public _imagesNote: string,
-//     public decimalLongitude: number,
-//     public month: number,
-//     public images: string[],
-//     public annotations: Annotation[],
-//     public day: number,
-//     public dwcDateAdded: string,
-//     public okExposeViaTapirLink: boolean,
-//     public identificationRemarks: string
-//   ){}
+//   data: Data;
 // }
+
+export class JsonEncounter {
+  constructor(
+    public sex: string,
+    public numSpotsRight: number,
+    public state: string,
+    public zebraClass: string,
+    public gpsLongitude: string,
+    public spotImageFileName: string,
+    public dateInMilliseconds: number,
+    public catalogNumber: string,
+    public gpsLatitude: string,
+    public rightSpotImageFileName: string,
+    public mmaCompatible: boolean,
+    public year: number,
+    public specificEpithet: string,
+    public distinguishingScar: string,
+    public minutes: string,
+    public individualID: string,
+    public hasAnnotations: boolean,
+    public Class: string,
+    public size_guess: string,
+    public locationID: string,
+    public genus: string,
+    public hour: number,
+    public occurenceID: string,
+    public tissueSamples: string[],
+    public modified: string,
+    public occurrenceRemarks: string,
+    public measurements: number[],
+    public decimalLatitude: number,
+    public metalTags: number[],
+    public numSpotsLeft: number,
+    public _imagesNote: string,
+    public decimalLongitude: number,
+    public month: number,
+    public images: string[],
+    public annotations: Annotation[],
+    public day: number,
+    public dwcDateAdded: string,
+    public okExposeViaTapirLink: boolean,
+    public identificationRemarks: string
+  ){}
+}
 
 export class Annotation {
   constructor(
