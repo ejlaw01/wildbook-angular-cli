@@ -9,6 +9,15 @@ import { LocationComponent } from './location/location.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { NavComponent } from './nav/nav.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { IdentityComponent } from './identity/identity.component';
+import { ContactComponent } from './contact/contact.component';
+import { ObservationAttributesComponent } from './observation-attributes/observation-attributes.component';
+import { DynamicPropertiesComponent } from './dynamic-properties/dynamic-properties.component';
+import { MeasurementsComponent } from './measurements/measurements.component';
+import { TrackingComponent } from './tracking/tracking.component';
+import { BiologicalSamplesComponent } from './biological-samples/biological-samples.component';
+import { MetadataComponent } from './metadata/metadata.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -17,7 +26,16 @@ import { GalleryComponent } from './gallery/gallery.component';
     HeaderComponent,
     LocationComponent,
     NavComponent,
-    GalleryComponent
+    GalleryComponent,
+    IdentityComponent,
+    ContactComponent,
+    ObservationAttributesComponent,
+    DynamicPropertiesComponent,
+    MeasurementsComponent,
+    TrackingComponent,
+    BiologicalSamplesComponent,
+    MetadataComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
