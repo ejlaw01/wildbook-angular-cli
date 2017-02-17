@@ -3,6 +3,9 @@
   <h4>
     <img class="section-icon" src="../../assets/images/samples.png" alt="Biological Samples">
     <span>Biological Samples</span>
-    <img class="arrow" src="../../assets/images/arrow.png">
+    <img class="arrow" src="../../assets/images/arrow.png" (click)="arrowClicked($event)">
   </h4>
+  <div *ngIf="clicked == true" class="content">
+    <!-- data goes here! -->
+  </div>
 </section>
