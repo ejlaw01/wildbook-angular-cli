@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Encounter, MediaAsset, AnnotationParam, MiniMediaAsset, JsonEncounter } from './encounter';
+import { Encounter, AnnotationParam, MiniMediaAsset } from './encounter';
 import { EncounterService } from './encounter.service';
 
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Encounter } from '../encounter';
 
 @Component({
   selector: 'app-gallery',
@@ -11,5 +12,7 @@ export class GalleryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {  }
+
+  @Input() encounters: Encounter[];
 
 }

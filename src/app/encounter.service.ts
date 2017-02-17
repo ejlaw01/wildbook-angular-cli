@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 
-import { Encounter, AnnotationParam, MiniMediaAsset, MediaAsset, Annotation, Feature, MediaAssetFeature, Store, Metadata, JsonEncounter } from './encounter';
+import { Encounter, AnnotationParam, MiniMediaAsset } from './encounter';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -33,7 +33,11 @@ export class EncounterService {
 
     for (var i = 0; i < encounterObject.annotations.length; i++) {
       imageURL = encounterObject.annotations[i].features[0].mediaAsset.url;
-      annotation = encounterObject.annotations[i].features[0].parameters;
+      // if (!encounterObject.annotations[i].features[0].type || !encounterObject.annotations[i].features[0].parameters) {
+      // } else {
+      //   annotation = encounterObject.annotations[i].features[0].parameters;
+      // }
+      annotation = new AnnotationParam(488, 674, 1874, 761);
       mediaAssets[i] = new MiniMediaAsset(imageURL, annotation);
     }
 

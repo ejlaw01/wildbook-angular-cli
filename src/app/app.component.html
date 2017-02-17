@@ -1,8 +1,9 @@
 <app-header></app-header>
 <app-nav></app-nav>
 <main container>
-  <h1>Encounter with Lynxton</h1>
-  <app-gallery></app-gallery>
+  <app-gallery
+    [encounters]="encounters"
+  ></app-gallery>
   <app-location></app-location>
   <app-identity></app-identity>
   <app-contact></app-contact>
@@ -14,7 +15,3 @@
   <app-metadata></app-metadata>
 </main>
 <app-footer></app-footer>
-<ul *ngFor="let encounter of encounters">
-  <li>individualID: {{encounter.name}}</li>
-  <li *ngFor="let mediaAsset of encounter.mediaAssets"><img src="{{mediaAsset.imageURL}}" alt=""></li>
-</ul>
