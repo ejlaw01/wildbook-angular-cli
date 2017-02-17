@@ -21,15 +21,17 @@
 .gallery {
   margin: 0;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  overflow: hidden;
+  display: block;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  // align-items: flex-start;
+  overflow: visible;
   .thumbnail {
-    flex: 1 1 48%;
-    margin-right: 2%;
+    position: relative;
+    // transform: scale(.2);
+    // flex: 1 1 48%;
+    // margin-right: 2%;
     &:last-child {
       margin-right: 0;
     }
@@ -37,13 +39,21 @@
       border: 3px solid blue;
     }
     img {
-      width: 100%;
+      // width: 100%;
     }
   }
 }
 
-// .annotation {
-//   height: "{{mediaAsset.annotation.height}}";
-//   width: "{{mediaAsset.annotation.width}}";
-//   border: 2px solid blue;
-// }
+.canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  .annotation {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 2px solid blue;
+  }
+}

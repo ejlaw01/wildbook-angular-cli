@@ -10,9 +10,16 @@
       </div>
     </div>
     <div  class="gallery">
-      <div *ngFor="let mediaAsset of encounter.mediaAssets" class="thumbnail">
+      <div class="thumbnail" *ngFor="let mediaAsset of encounter.mediaAssets">
         <img src="{{mediaAsset.imageURL}}" alt="">
-        <div class="annotation">
+        <div class="canvas">
+          <div class="annotation"
+            [style.height]="getHeight()"
+            [style.width]="getWidth()"
+            [style.left]="getLeft()"
+            [style.top]="getTop()"
+          >
+          </div>
         </div>
       </div>
     </div>
