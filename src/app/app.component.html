@@ -3,7 +3,10 @@
 <main container>
   <h1>Encounter with Lynxton</h1>
   <app-gallery></app-gallery>
-  <app-location></app-location>
+  <app-location
+  (showData) = "arrowClicked($event)"
+  [clicked] = "clicked"
+  ></app-location>
   <app-identity></app-identity>
   <app-contact></app-contact>
   <app-observation-attributes></app-observation-attributes>

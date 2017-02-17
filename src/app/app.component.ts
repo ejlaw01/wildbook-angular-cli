@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Encounter } from './encounter';
 import { EncounterService } from './encounter.service';
 
@@ -12,6 +12,7 @@ import { EncounterService } from './encounter.service';
 export class AppComponent implements OnInit {
 
   encounters: Encounter[];
+  clicked: boolean = false;
 
   constructor(private encounterService: EncounterService) { }
 
@@ -23,6 +24,12 @@ export class AppComponent implements OnInit {
     this.getEncounter();
   }
 
-
+  arrowClicked() {
+    if (this.clicked == false) {
+      this.clicked = true;
+    } else {
+      this.clicked = false;
+    }
+  }
 
 }
