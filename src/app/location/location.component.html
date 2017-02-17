@@ -1,7 +1,13 @@
 <hr>
 <section class="section-wrapper">
-  <h4><img class="section-icon" src="../../assets/images/location.png" alt="Location">Location</h4>
-  <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-    <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
-  </sebm-google-map>
+  <h4>
+    <img class="section-icon" src="../../assets/images/location.png" alt="Location">
+    <span>Location</span>
+    <img class="arrow" src="../../assets/images/arrow.png" (click)="arrowClicked($event)">
+  </h4>
+  <div *ngIf="clicked == true" class="content">
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+    </sebm-google-map>
+  </div>
 </section>

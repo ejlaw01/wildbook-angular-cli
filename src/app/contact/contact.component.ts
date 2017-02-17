@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  clicked: boolean = false;
+
+  arrowClicked() {
+    if (this.clicked == false) {
+      this.clicked = true;
+    } else {
+      this.clicked = false;
+    }
+  }
+
   constructor() { }
 
   ngOnInit() {

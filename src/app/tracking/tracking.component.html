@@ -1,4 +1,11 @@
 <hr>
 <section class="section-wrapper">
-  <h4><img class="section-icon" src="../../assets/images/tracking.png" alt="Tracking">Tracking</h4>
+  <h4>
+    <img class="section-icon" src="../../assets/images/tracking.png" alt="Tracking">
+    <span>Tracking</span>
+    <img class="arrow" src="../../assets/images/arrow.png" (click)="arrowClicked($event)">
+  </h4>
+  <div *ngIf="clicked == true" class="content">
+    <!-- data goes here! -->
+  </div>
 </section>
