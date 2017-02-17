@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-location',
@@ -7,11 +7,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class LocationComponent implements OnInit {
 
-  @Output() showData = new EventEmitter();
-  @Input() clicked: boolean;
+  clicked: boolean = false;
 
   arrowClicked() {
-    this.showData.emit();
+    if (this.clicked == false) {
+      this.clicked = true;
+    } else {
+      this.clicked = false;
+    }
   }
 
   lat: number = 37.3;

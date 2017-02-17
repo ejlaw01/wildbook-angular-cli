@@ -3,6 +3,8 @@
   <h4>
     <img class="section-icon" src="../../assets/images/identity.png" alt="Identity">
     <span>Identity</span>
-    <img class="arrow" src="../../assets/images/arrow.png">
+    <img class="arrow" src="../../assets/images/arrow.png" (click)="arrowClicked($event)">
   </h4>
+  <div *ngIf="clicked == true" class="content">
+  </div>
 </section>

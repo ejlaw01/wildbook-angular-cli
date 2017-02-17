@@ -12,7 +12,6 @@ import { EncounterService } from './encounter.service';
 export class AppComponent implements OnInit {
 
   encounters: Encounter[];
-  clicked: boolean = false;
 
   constructor(private encounterService: EncounterService) { }
 
@@ -22,14 +21,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEncounter();
-  }
-
-  arrowClicked() {
-    if (this.clicked == false) {
-      this.clicked = true;
-    } else {
-      this.clicked = false;
-    }
   }
 
 }
