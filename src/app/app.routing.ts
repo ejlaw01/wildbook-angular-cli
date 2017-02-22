@@ -1,6 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Encounter } from './encounter/encounter.component';
+import { Encounter } from './encounter';
 
 const appRoutes: Routes = [
   {
