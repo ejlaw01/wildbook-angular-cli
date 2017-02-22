@@ -18,6 +18,7 @@ import { TrackingComponent } from './tracking/tracking.component';
 import { BiologicalSamplesComponent } from './biological-samples/biological-samples.component';
 import { MetadataComponent } from './metadata/metadata.component';
 import { FooterComponent } from './footer/footer.component';
+import { EnounterComponent } from './enounter/enounter.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FooterComponent } from './footer/footer.component';
     TrackingComponent,
     BiologicalSamplesComponent,
     MetadataComponent,
-    FooterComponent
+    FooterComponent,
+    EnounterComponent
   ],
   imports: [
     BrowserModule,
