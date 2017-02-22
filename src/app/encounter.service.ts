@@ -33,11 +33,12 @@ export class EncounterService {
 
     for (var i = 0; i < encounterObject.annotations.length; i++) {
       imageURL = encounterObject.annotations[i].features[0].mediaAsset.url;
-      // if (!encounterObject.annotations[i].features[0].type || !encounterObject.annotations[i].features[0].parameters) {
-      // } else {
-      //   annotation = encounterObject.annotations[i].features[0].parameters;
-      // }
-      annotation = new AnnotationParam(488, 674, 1874, 761);
+      if (!encounterObject.annotations[i].features[0].type || !encounterObject.annotations[i].features[0].parameters) {
+        alert("No supplied parameters!");
+      } else {
+        annotation = encounterObject.annotations[i].features[0].parameters;
+      }
+      // annotation = new AnnotationParam(488, 674, 1874, 761);
       mediaAssets[i] = new MiniMediaAsset(imageURL, annotation);
     }
 

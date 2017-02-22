@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
     this.encounterService.getEncounter().subscribe(
       encounter => {
         for (var i = 0; i < encounter[0].mediaAssets.length; i++) {
-          debugger;
           var image = new Image;
           image.src = encounter[0].mediaAssets[i].imageURL;
           var ogWidth: number = image.naturalWidth;
@@ -44,8 +43,12 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // var self = this;
     this.getEncounter();
     this.getImageRatio();
+    // window.onresize = function() {
+    //   self.getImageRatio();
+    // };
   }
 
 }
