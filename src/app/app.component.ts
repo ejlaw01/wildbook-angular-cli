@@ -43,9 +43,9 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // var self = this;
     this.getEncounter();
     this.getImageRatio();
+    // var self = this;
     // window.onresize = function() {
     //   self.getImageRatio();
     // };
