@@ -6,11 +6,20 @@
     height: auto;
   }
   .toolbar {
+    float: left;
     height: 2.5em;
-    width: 100%;
+    width: 50%;
     display: block;
     margin: 0 auto 1em;
     background-color: #232323;
+  }
+  .left {
+    text-align: left;
+    img {
+      margin: 4px;
+    }
+  }
+  .right {
     text-align: right;
     img {
       margin: 4px;
