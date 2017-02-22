@@ -19,9 +19,10 @@
 }
 
 .gallery {
+  position: relative;
   margin: 0;
   width: 100%;
-  display: block;
+  display: block;;
   // flex-direction: row;
   // flex-wrap: wrap;
   // justify-content: space-between;
@@ -29,31 +30,31 @@
   overflow: visible;
   .thumbnail {
     position: relative;
-    // transform: scale(.2);
     // flex: 1 1 48%;
+    width: 100%;
     // margin-right: 2%;
+    margin: 10px 0;
     &:last-child {
       margin-right: 0;
     }
     &:focus {
       border: 3px solid blue;
     }
-    img {
-      // width: 100%;
+    .annotatedImage {
+      position: relative;
+      display: inline-block;
+      width: 100%;
     }
-  }
-}
-
-.canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  .annotation {
-    position: absolute;
-    left: 0;
-    top: 0;
-    border: 2px solid blue;
+    .canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      .annotation {
+        position: absolute;
+        border: 4px solid blue;
+      }
+    }
   }
 }

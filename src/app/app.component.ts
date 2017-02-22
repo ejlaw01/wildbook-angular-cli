@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Encounter, AnnotationParam, MiniMediaAsset } from './encounter';
 
 import { EncounterService } from './encounter.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 
 @Component({
@@ -14,6 +17,7 @@ import { EncounterService } from './encounter.service';
 export class AppComponent implements OnInit {
 
   encounters: Encounter[];
+  ratio: number;
 
   constructor(private encounterService: EncounterService) { }
 
@@ -21,8 +25,27 @@ export class AppComponent implements OnInit {
     this.encounterService.getEncounter().subscribe(encounter => this.encounters = encounter);
   }
 
+  getImageRatio(): void {
+    this.encounterService.getEncounter().subscribe(
+      encounter => {
+        for (var i = 0; i < encounter[0].mediaAssets.length; i++) {
+          debugger;
+          var image = new Image;
+          image.src = encounter[0].mediaAssets[i].imageURL;
+          var ogWidth: number = image.naturalWidth;
+          var currentWidth: number = document.getElementById(('gallery-image-' + [i])).clientWidth;
+          var ratio = (currentWidth / ogWidth);
+          console.log(ratio);
+          this.ratio = ratio;
+        }
+      }
+    );
+  }
+
+
   ngOnInit(): void {
     this.getEncounter();
+    this.getImageRatio();
   }
 
 }

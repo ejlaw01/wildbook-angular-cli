@@ -10,31 +10,32 @@ import { Encounter } from '../encounter';
 export class GalleryComponent implements OnInit {
 
   @Input() encounters: Encounter[];
+  @Input() ratio: number;
 
   getHeight() {
-    var height = this.encounters[0].mediaAssets[0].annotation.height + "px";
+    var height = (this.encounters[0].mediaAssets[0].annotation.height * this.ratio)+ "px";
     return height;
   }
 
   getWidth() {
-    var width = this.encounters[0].mediaAssets[0].annotation.width + "px";
+    var width = (this.encounters[0].mediaAssets[0].annotation.width * this.ratio) + "px";
     return width;
   }
 
   getLeft(){
-    var left = this.encounters[0].mediaAssets[0].annotation.x + "px";
+    var left = (this.encounters[0].mediaAssets[0].annotation.x * this.ratio) + "px";
     return left;
   }
 
   getTop() {
-    var top = this.encounters[0].mediaAssets[0].annotation.y + "px";
+    var top = (this.encounters[0].mediaAssets[0].annotation.y * this.ratio) + "px";
     return top;
   }
 
-
   constructor() { }
 
-  ngOnInit() {  }
+  ngOnInit() {
 
+  }
 
 }

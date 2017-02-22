@@ -15,7 +15,7 @@ export class EncounterService {
 
   constructor(private http: Http){  }
 
-  getEncounter (): Observable<Encounter[]> {
+  getEncounter(): Observable<Encounter[]> {
     return this.http.get(this.encounterURL)
                     .map(this.extractData)
                     .catch(this.handleError);
@@ -42,6 +42,7 @@ export class EncounterService {
     }
 
     thisEncounter = new Encounter(name, mediaAssets);
+
     console.log(thisEncounter);
 
     return [thisEncounter || {}];
@@ -60,45 +61,4 @@ export class EncounterService {
     return Observable.throw(errMsg);
   }
 
-
 }
-
-
-// getEncounter(): Promise<Encounter> {
-//   let link: string = 'http://lev.cs.rpi.edu:8080/lewa3/api/org.ecocean.Encounter/';
-//   let encounterID: string = '49413784-83ca-4210-964b-ced9eed6f895';
-//   let apiLink: string = link + encounterID;
-//
-//   var encounterObject;
-//   var thisEncounter: Encounter;
-//
-//   var self = this;
-//
-//   var request = new Promise(function(){
-//    self.http.get(apiLink).map((res: Response) => {
-//
-//       debugger;
-// var encounterObject = res.json();
-//       console.log(encounterObject);
-//
-// var mediaAssets: MiniMediaAsset[] = [];
-// var annotation: AnnotationParam;
-//
-// let name: string = encounterObject.individualID;
-// let imageURL: string = encounterObject.annotations[0].features[0].mediaAsset.url;
-//
-// for (var i = 0; i < encounterObject.annotations.length; i++) {
-//   imageURL = encounterObject.annotations[i].features[0].mediaAsset.url;
-//   annotation = encounterObject.annotations[i].features[0].parameters;
-//   mediaAssets[i] = new MiniMediaAsset(imageURL, annotation);
-// }
-//
-// thisEncounter = new Encounter(name, mediaAssets);
-//       console.log(thisEncounter);
-//       return thisEncounter;
-//     });
-//   });
-//
-//   debugger;
-//   return Promise.resolve(request);
-// }

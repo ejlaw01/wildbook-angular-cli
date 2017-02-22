@@ -10,14 +10,14 @@
       </div>
     </div>
     <div  class="gallery">
-      <div class="thumbnail" *ngFor="let mediaAsset of encounter.mediaAssets">
-        <img src="{{mediaAsset.imageURL}}" alt="">
+      <div class="thumbnail" *ngFor="let mediaAsset of encounter.mediaAssets; let i = index">
+        <img class="annotatedImage" id="gallery-image-{{i}}" src="{{mediaAsset.imageURL}}" alt="">
         <div class="canvas">
           <div class="annotation"
-            [style.height]="getHeight()"
-            [style.width]="getWidth()"
-            [style.left]="getLeft()"
-            [style.top]="getTop()"
+          [style.height]="getHeight()"
+          [style.width]="getWidth()"
+          [style.left]="getLeft()"
+          [style.top]="getTop()"
           >
           </div>
         </div>
