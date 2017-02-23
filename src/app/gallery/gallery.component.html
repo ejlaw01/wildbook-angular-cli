@@ -20,6 +20,13 @@
           [style.top]="getTop(i)"
           >
           </div>
+          <div class="secondary-annotation" *ngFor="let secondaryAnnotation of encounter.mediaAssets[i].secondaryAnnotations; let j = index"
+          [style.height]="getSecondaryHeight(i, j)"
+          [style.width]="getSecondaryWidth(i, j)"
+          [style.left]="getSecondaryLeft(i, j)"
+          [style.top]="getSecondaryTop(i, j)"
+          >
+          </div>
         </div>
       </div>
     </div>

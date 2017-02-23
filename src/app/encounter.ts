@@ -8,19 +8,21 @@ export class Encounter {
 export class MiniMediaAsset {
   constructor(
     public imageURL: string,
-    public annotation: AnnotationParam
+    public annotation: AnnotationParam,
+    public secondaryAnnotations: AnnotationParam[]
   ){}
 }
 
 export class AnnotationParam {
   constructor(
+    public id: string,
     public height: number,
     public width: number,
     public x: number,
     public y: number
   ){}
 }
-// 
+//
 //
 // export class JsonEncounter {
 //   constructor(

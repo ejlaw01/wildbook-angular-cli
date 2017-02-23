@@ -27,25 +27,38 @@ export class EncounterService {
     var thisEncounter: Encounter;
     var mediaAssets: MiniMediaAsset[] = [];
     var annotation: AnnotationParam;
+    var secondaryAnnotations: AnnotationParam[];
 
     let name: string = encounterObject.individualID;
     let imageURL: string = encounterObject.annotations[0].features[0].mediaAsset.url;
 
     for (var i = 0; i < encounterObject.annotations.length; i++) {
       imageURL = encounterObject.annotations[i].features[0].mediaAsset.url;
+      var secondaryAnnotations: AnnotationParam[] = [];
       if (!encounterObject.annotations[i].features[0].type || !encounterObject.annotations[i].features[0].parameters) {
         alert("No supplied parameters!");
       } else {
-        annotation = encounterObject.annotations[i].features[0].parameters;
+        var id = encounterObject.annotations[i].id;
+        var height = encounterObject.annotations[i].features[0].parameters.height;
+        var width = encounterObject.annotations[i].features[0].parameters.width;
+        var x = encounterObject.annotations[i].features[0].parameters.x;
+        var y = encounterObject.annotations[i].features[0].parameters.y;
+        var annotation = new AnnotationParam(id, height, width, x, y);
+        for (var j = 0; j < encounterObject.annotations[i].features[0].mediaAsset.features.length; j++) {
+          //reset value
+          var secondaryId = encounterObject.annotations[i].features[0].mediaAsset.features[j].id;
+          var secondaryHeight = encounterObject.annotations[i].features[0].mediaAsset.features[j].parameters.height;
+          var secondaryWidth = encounterObject.annotations[i].features[0].mediaAsset.features[j].parameters.width;
+          var secondaryX = encounterObject.annotations[i].features[0].mediaAsset.features[j].parameters.x;
+          var secondaryY = encounterObject.annotations[i].features[0].mediaAsset.features[j].parameters.y;
+          secondaryAnnotations[j] = new AnnotationParam(secondaryId, secondaryHeight, secondaryWidth, secondaryX, secondaryY);
+        }
       }
-      // annotation = new AnnotationParam(488, 674, 1874, 761);
-      mediaAssets[i] = new MiniMediaAsset(imageURL, annotation);
+      mediaAssets[i] = new MiniMediaAsset(imageURL, annotation, secondaryAnnotations);
     }
 
     thisEncounter = new Encounter(name, mediaAssets);
-
     console.log(thisEncounter);
-
     return [thisEncounter || {}];
   }
 
