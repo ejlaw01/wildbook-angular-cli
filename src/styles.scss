@@ -48,3 +48,13 @@ hr {
 .arrow {
 	float: right;
 }
+
+.open-arrow {
+	transform: rotate(-180deg);
+	transition: transform 0.1s ease;
+}
+
+.close-arrow {
+	transition: rotate(180deg);
+	transition: transform 0.1s ease;
+}

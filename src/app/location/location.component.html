@@ -3,7 +3,7 @@
   <h4>
     <img class="section-icon" src="../../assets/images/location.png" alt="Location">
     <span>Location</span>
-    <img class="arrow" src="../../assets/images/arrow.png" (click)="arrowClicked($event)">
+    <img class="arrow open-arrow" src="../../assets/images/arrow.png" (click)="arrowClicked($event)">
   </h4>
   <div *ngIf="clicked == true" class="content">
     <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
