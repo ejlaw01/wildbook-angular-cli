@@ -9,11 +9,14 @@ export class LocationComponent implements OnInit {
 
   clicked: boolean = true;
 
-  arrowClicked() {
+  arrowClicked(event) {
     if (this.clicked === false) {
       this.clicked = true;
+      event.target.classList.add('open-arrow');
     } else {
       this.clicked = false;
+      event.target.classList.remove('open-arrow');
+      event.target.classList.add('close-arrow');
     }
   }
 
