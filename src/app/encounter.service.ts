@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class EncounterService {
 
-  private encounterURL: string = 'http://lev.cs.rpi.edu:8080/lewa3/api/org.ecocean.Encounter/49413784-83ca-4210-964b-ced9eed6f895';
+  private encounterURL: string = 'http://wb.scribble.com/api/org.ecocean.Encounter/5ea01c1c-b8bc-4053-88c0-5a5182b15624';
 
   constructor(private http: Http){  }
 
