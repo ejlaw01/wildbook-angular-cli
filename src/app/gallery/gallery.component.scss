@@ -33,25 +33,43 @@
 .gallery {
   margin: auto;
   width: 80%;
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
   .thumbnail {
+    position: relative;
     flex: 1 1 48%;
     margin: 1%;
     &:focus {
       border: 3px solid blue;
     }
-    img {
+    .annotatedImage {
+      position: relative;
+      display: inline-block;
       width: 100%;
+    }
+    .canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      .annotation {
+        position: absolute;
+        border: 2px solid blue;
+      }
+      .secondary-annotation {
+        position: absolute;
+        border: 2px solid white;
+        opacity: .4;
+        &:hover {
+          background-color: white;
+          opacity: .4;
+        }
+      }
     }
   }
 }
-
-// .annotation {
-//   height: "{{mediaAsset.annotation.height}}";
-//   width: "{{mediaAsset.annotation.width}}";
-//   border: 2px solid blue;
-// }

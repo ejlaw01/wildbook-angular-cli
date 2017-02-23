@@ -14,9 +14,23 @@
       </div>
     </div>
     <div  class="gallery">
-      <div *ngFor="let mediaAsset of encounter.mediaAssets" class="thumbnail">
-        <img src="{{mediaAsset.imageURL}}" alt="">
-        <div class="annotation">
+      <div class="thumbnail" *ngFor="let mediaAsset of encounter.mediaAssets; let i = index">
+        <img class="annotatedImage" id="gallery-image-{{i}}" src="{{mediaAsset.imageURL}}" alt="">
+        <div class="canvas">
+          <div class="annotation"
+          [style.height]="getHeight(i)"
+          [style.width]="getWidth(i)"
+          [style.left]="getLeft(i)"
+          [style.top]="getTop(i)"
+          >
+          </div>
+          <div class="secondary-annotation" *ngFor="let secondaryAnnotation of encounter.mediaAssets[i].secondaryAnnotations; let j = index"
+          [style.height]="getSecondaryHeight(i, j)"
+          [style.width]="getSecondaryWidth(i, j)"
+          [style.left]="getSecondaryLeft(i, j)"
+          [style.top]="getSecondaryTop(i, j)"
+          >
+          </div>
         </div>
       </div>
     </div>

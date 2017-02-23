@@ -15,7 +15,7 @@ export class EncounterService {
 
   constructor(private http: Http){  }
 
-  getEncounter (): Observable<Encounter[]> {
+  getEncounter(): Observable<Encounter[]> {
     return this.http.get(this.encounterURL)
                     .map(this.extractData)
                     .catch(this.handleError);
@@ -27,23 +27,38 @@ export class EncounterService {
     var thisEncounter: Encounter;
     var mediaAssets: MiniMediaAsset[] = [];
     var annotation: AnnotationParam;
+    var secondaryAnnotations: AnnotationParam[];
 
     let name: string = encounterObject.individualID;
     let imageURL: string = encounterObject.annotations[0].features[0].mediaAsset.url;
 
     for (var i = 0; i < encounterObject.annotations.length; i++) {
       imageURL = encounterObject.annotations[i].features[0].mediaAsset.url;
-      // if (!encounterObject.annotations[i].features[0].type || !encounterObject.annotations[i].features[0].parameters) {
-      // } else {
-      //   annotation = encounterObject.annotations[i].features[0].parameters;
-      // }
-      annotation = new AnnotationParam(488, 674, 1874, 761);
-      mediaAssets[i] = new MiniMediaAsset(imageURL, annotation);
+      var secondaryAnnotations: AnnotationParam[] = [];
+      if (!encounterObject.annotations[i].features[0].type || !encounterObject.annotations[i].features[0].parameters) {
+        alert("No supplied parameters!");
+      } else {
+        var id = encounterObject.annotations[i].id;
+        var height = encounterObject.annotations[i].features[0].parameters.height;
+        var width = encounterObject.annotations[i].features[0].parameters.width;
+        var x = encounterObject.annotations[i].features[0].parameters.x;
+        var y = encounterObject.annotations[i].features[0].parameters.y;
+        var annotation = new AnnotationParam(id, height, width, x, y);
+        for (var j = 0; j < encounterObject.annotations[i].features[0].mediaAsset.features.length; j++) {
+          //reset value
+          var secondaryId = encounterObject.annotations[i].features[0].mediaAsset.features[j].id;
+          var secondaryHeight = encounterObject.annotations[i].features[0].mediaAsset.features[j].parameters.height;
+          var secondaryWidth = encounterObject.annotations[i].features[0].mediaAsset.features[j].parameters.width;
+          var secondaryX = encounterObject.annotations[i].features[0].mediaAsset.features[j].parameters.x;
+          var secondaryY = encounterObject.annotations[i].features[0].mediaAsset.features[j].parameters.y;
+          secondaryAnnotations[j] = new AnnotationParam(secondaryId, secondaryHeight, secondaryWidth, secondaryX, secondaryY);
+        }
+      }
+      mediaAssets[i] = new MiniMediaAsset(imageURL, annotation, secondaryAnnotations);
     }
 
     thisEncounter = new Encounter(name, mediaAssets);
     console.log(thisEncounter);
-
     return [thisEncounter || {}];
   }
 
@@ -60,45 +75,4 @@ export class EncounterService {
     return Observable.throw(errMsg);
   }
 
-
 }
-
-
-// getEncounter(): Promise<Encounter> {
-//   let link: string = 'http://lev.cs.rpi.edu:8080/lewa3/api/org.ecocean.Encounter/';
-//   let encounterID: string = '49413784-83ca-4210-964b-ced9eed6f895';
-//   let apiLink: string = link + encounterID;
-//
-//   var encounterObject;
-//   var thisEncounter: Encounter;
-//
-//   var self = this;
-//
-//   var request = new Promise(function(){
-//    self.http.get(apiLink).map((res: Response) => {
-//
-//       debugger;
-// var encounterObject = res.json();
-//       console.log(encounterObject);
-//
-// var mediaAssets: MiniMediaAsset[] = [];
-// var annotation: AnnotationParam;
-//
-// let name: string = encounterObject.individualID;
-// let imageURL: string = encounterObject.annotations[0].features[0].mediaAsset.url;
-//
-// for (var i = 0; i < encounterObject.annotations.length; i++) {
-//   imageURL = encounterObject.annotations[i].features[0].mediaAsset.url;
-//   annotation = encounterObject.annotations[i].features[0].parameters;
-//   mediaAssets[i] = new MiniMediaAsset(imageURL, annotation);
-// }
-//
-// thisEncounter = new Encounter(name, mediaAssets);
-//       console.log(thisEncounter);
-//       return thisEncounter;
-//     });
-//   });
-//
-//   debugger;
-//   return Promise.resolve(request);
-// }
