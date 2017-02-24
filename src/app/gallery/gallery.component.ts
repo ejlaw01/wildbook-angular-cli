@@ -13,6 +13,22 @@ export class GalleryComponent implements OnInit {
   @Input() ratio: number;
   @Input() selectedImageURL: string;
 
+  isProcessing: boolean = true;
+
+  isDetected: boolean = false;
+  isNotDetected: boolean = false;
+
+  detectionStatus() {
+    //conditional statement goes here! see google doc titled 'Wildbook: IA musings" for reference.
+  }
+
+  isIdentified: boolean = false;
+  isNotIdentified: boolean = false;
+
+  identificationStatus() {
+    //conditional statement goes here! see google doc titled 'Wildbook: IA musings" for reference.
+  }
+
   getHeight(i) {
     var height = (this.encounters[0].mediaAssets[i].annotation.height * this.ratio)+ "px";
     return height;

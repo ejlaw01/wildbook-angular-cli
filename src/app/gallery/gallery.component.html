@@ -6,8 +6,8 @@
       [src]="selectedImageURL"
       >
       <div class="toolbar left">
-        <img src="../../assets/images/detection.png">
-        <img src="../../assets/images/identification.png">
+        <img src="../../assets/images/detection.png"><span [ngClass]="{'complete': isDetected, 'incomplete': isNotDetected, 'processing': isProcessing}"></span>
+        <img src="../../assets/images/identification.png"><span [ngClass]="{'complete': isIdentified, 'incomplete': isNotIdentified, 'processing': isProcessing}"></span>
       </div>
       <div class="toolbar right">
         <img src="../../assets/images/annotate.png">

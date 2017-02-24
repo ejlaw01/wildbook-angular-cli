@@ -3,7 +3,9 @@
 }
 
 .selected {
-  padding: 1%;
+  display: block;
+  margin: auto;
+  width: 80%;
   #selected-image {
     display: block;
     margin: auto;
@@ -33,19 +35,17 @@
 }
 
 .gallery {
+  margin: auto;
+  width: 80%;
   position: relative;
-  margin: 0;
-  width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
-  overflow: visible;
   .thumbnail {
     position: relative;
     flex: 1 1 48%;
-    width: 100%;
     margin: 1%;
     &:focus {
       border: 3px solid blue;
@@ -63,7 +63,7 @@
       right: 0;
       .annotation {
         position: absolute;
-        border: 2px solid blue;
+        border: 2px solid #1E7FC3;
       }
       .secondary-annotation {
         position: absolute;
@@ -76,4 +76,28 @@
       }
     }
   }
+}
+
+.complete::after {
+  content: '✓';
+  color: #1E7FC3;
+  position: relative;
+  bottom: 6px;
+  right: 6px;
+}
+
+.incomplete::after {
+  content: '!';
+  color: #F5A829;
+  position: relative;
+  bottom: 6px;
+  right: 6px;
+}
+
+.processing::after {
+  content: '?';
+  color: #F5A829;
+  position: relative;
+  bottom: 6px;
+  right: 6px;
 }
