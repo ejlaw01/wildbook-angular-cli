@@ -2,7 +2,9 @@
   <div *ngFor="let encounter of encounters">
     <h1>Encounter with {{encounter.name}}</h1>
     <div class="selected">
-      <img id="selected-image" src="{{encounter.mediaAssets[0].imageURL}}">
+      <img id="selected-image"
+      [src]="selectedImageURL"
+      >
       <div class="toolbar left">
         <img src="../../assets/images/detection.png">
         <img src="../../assets/images/identification.png">
@@ -14,7 +16,7 @@
       </div>
     </div>
     <div  class="gallery">
-      <div class="thumbnail" *ngFor="let mediaAsset of encounter.mediaAssets; let i = index">
+      <div class="thumbnail" *ngFor="let mediaAsset of encounter.mediaAssets; let i = index" (click)="selectImage(i)" [ngClass]="{'focusImage':encounter.mediaAssets[i].isSelected}">
         <img class="annotatedImage" id="gallery-image-{{i}}" src="{{mediaAsset.imageURL}}" alt="">
         <div class="canvas">
           <div class="annotation"

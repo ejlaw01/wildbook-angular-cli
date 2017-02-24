@@ -36,7 +36,8 @@ export class EncounterService {
       imageURL = encounterObject.annotations[i].features[0].mediaAsset.url;
       var secondaryAnnotations: AnnotationParam[] = [];
       if (!encounterObject.annotations[i].features[0].type || !encounterObject.annotations[i].features[0].parameters) {
-        alert("No supplied parameters!");
+        console.log("No annotation parameters supplied!");
+        var annotation = new AnnotationParam("none", 0, 0, 0, 0);
       } else {
         var id = encounterObject.annotations[i].id;
         var height = encounterObject.annotations[i].features[0].parameters.height;
@@ -45,7 +46,6 @@ export class EncounterService {
         var y = encounterObject.annotations[i].features[0].parameters.y;
         var annotation = new AnnotationParam(id, height, width, x, y);
         for (var j = 0; j < encounterObject.annotations[i].features[0].mediaAsset.features.length; j++) {
-          //reset value
           var secondaryId = encounterObject.annotations[i].features[0].mediaAsset.features[j].id;
           var secondaryHeight = encounterObject.annotations[i].features[0].mediaAsset.features[j].parameters.height;
           var secondaryWidth = encounterObject.annotations[i].features[0].mediaAsset.features[j].parameters.width;

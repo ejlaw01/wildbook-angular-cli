@@ -11,6 +11,7 @@ export class GalleryComponent implements OnInit {
 
   @Input() encounters: Encounter[];
   @Input() ratio: number;
+  @Input() selectedImageURL: string;
 
   getHeight(i) {
     var height = (this.encounters[0].mediaAssets[i].annotation.height * this.ratio)+ "px";
@@ -46,10 +47,19 @@ export class GalleryComponent implements OnInit {
     return top;
   }
 
-  constructor() { }
+  selectImage(i) {
+    var mediaAssets = this.encounters[0].mediaAssets;
+    for (var j = 0; j < mediaAssets.length; j++) {
+      mediaAssets[j].isSelected = false;
+    }
+    this.selectedImageURL = mediaAssets[i].imageURL;
+    mediaAssets[i].isSelected = true;
+  }
+
+  constructor() {
+  }
 
   ngOnInit() {
-
   }
 
 }

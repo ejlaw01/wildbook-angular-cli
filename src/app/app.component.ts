@@ -18,11 +18,14 @@ export class AppComponent implements OnInit {
 
   encounters: Encounter[];
   ratio: number;
+  selectedImageURL: string;
 
   constructor(private encounterService: EncounterService) { }
 
   getEncounter(): void {
-    this.encounterService.getEncounter().subscribe(encounter => this.encounters = encounter);
+    this.encounterService.getEncounter().subscribe(encounter => {
+      this.encounters = encounter;
+    });
   }
 
   getImageRatio(): void {
@@ -37,9 +40,11 @@ export class AppComponent implements OnInit {
           console.log(ratio);
           this.ratio = ratio;
         }
+        this.selectedImageURL = encounter[0].mediaAssets[0].imageURL;
       }
     );
   }
+
 
 
   ngOnInit(): void {

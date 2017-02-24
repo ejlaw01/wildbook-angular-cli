@@ -9,7 +9,8 @@ export class MiniMediaAsset {
   constructor(
     public imageURL: string,
     public annotation: AnnotationParam,
-    public secondaryAnnotations: AnnotationParam[]
+    public secondaryAnnotations: AnnotationParam[],
+    public isSelected: boolean = false
   ){}
 }
 
